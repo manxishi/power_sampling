@@ -1,0 +1,12 @@
+Running shard BATCH_IDX=0 with SEED=6 (task 6)
+qwen_math
+10
+dataset done
+Loading model from: /home/gridsan/mshi/MAML-Soljacic_shared/DeepSeek_models/DeepSeek-R1-Distill-Qwen-7B
+WARNING 02-25 18:27:27 config.py:1865] Casting torch.bfloat16 to torch.float16.
+INFO 02-25 18:27:36 config.py:350] This model supports multiple tasks: {'embedding', 'generate'}. Defaulting to 'generate'.
+WARNING 02-25 18:27:36 config.py:503] To see benefits of async output processing, enable CUDA graph. Since, enforce-eager is enabled, async output processor cannot be used
+INFO 02-25 18:27:36 llm_engine.py:249] Initializing an LLM engine (v0.6.4.post1) with config: model='/home/gridsan/mshi/MAML-Soljacic_shared/DeepSeek_models/DeepSeek-R1-Distill-Qwen-7B', speculative_config=None, tokenizer='/home/gridsan/mshi/MAML-Soljacic_shared/DeepSeek_models/DeepSeek-R1-Distill-Qwen-7B', skip_tokenizer_init=False, tokenizer_mode=auto, revision=None, override_neuron_config=None, tokenizer_revision=None, trust_remote_code=True, dtype=torch.float16, max_seq_len=32768, download_dir=None, load_format=LoadFormat.AUTO, tensor_parallel_size=1, pipeline_parallel_size=1, disable_custom_all_reduce=False, quantization=None, enforce_eager=True, kv_cache_dtype=auto, quantization_param_path=None, device_config=cuda, decoding_config=DecodingConfig(guided_decoding_backend='outlines'), observability_config=ObservabilityConfig(otlp_traces_endpoint=None, collect_model_forward_time=False, collect_model_execute_time=False), seed=0, served_model_name=/home/gridsan/mshi/MAML-Soljacic_shared/DeepSeek_models/DeepSeek-R1-Distill-Qwen-7B, num_scheduler_steps=1, chunked_prefill_enabled=False multi_step_stream_outputs=True, enable_prefix_caching=False, use_async_output_proc=False, use_cached_outputs=False, chat_template_text_format=string, mm_processor_kwargs=None, pooler_config=None)
+INFO 02-25 18:27:37 selector.py:261] Cannot use FlashAttention-2 backend for Volta and Turing GPUs.
+INFO 02-25 18:27:37 selector.py:144] Using XFormers backend.
+INFO 02-25 18:27:38 model_runner.py:1072] Starting to load model /home/gridsan/mshi/MAML-Soljacic_shared/DeepSeek_models/DeepSeek-R1-Distill-Qwen-7B...

@@ -1,0 +1,59 @@
+2026-02-25 18:27:11.421754: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-02-25 18:27:11.967301: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:485] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2026-02-25 18:27:12.017458: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:8454] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2026-02-25 18:27:12.041455: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1452] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2026-02-25 18:27:12.633762: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: SSE4.1 SSE4.2 AVX AVX2 AVX512F AVX512_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+/state/partition1/llgrid/pkg/anaconda/python-ML-2025a/lib/python3.10/site-packages/vllm/executor/gpu_executor.py:50: UserWarning: Failed to get the IP address, using 0.0.0.0 by default.The value can be set by the environment variable VLLM_HOST_IP or HOST_IP.
+  get_ip(), get_open_port())
+[rank0]: Traceback (most recent call last):
+[rank0]:   File "/home/gridsan/mshi/reasoning-with-sampling/llm_experiments/power_samp_math.py", line 76, in <module>
+[rank0]:     llm = LLM(model=model_str, trust_remote_code=True, dtype="half", enforce_eager=True,
+[rank0]:   File "/state/partition1/llgrid/pkg/anaconda/python-ML-2025a/lib/python3.10/site-packages/vllm/utils.py", line 1028, in inner
+[rank0]:     return fn(*args, **kwargs)
+[rank0]:   File "/state/partition1/llgrid/pkg/anaconda/python-ML-2025a/lib/python3.10/site-packages/vllm/entrypoints/llm.py", line 210, in __init__
+[rank0]:     self.llm_engine = self.engine_class.from_engine_args(
+[rank0]:   File "/state/partition1/llgrid/pkg/anaconda/python-ML-2025a/lib/python3.10/site-packages/vllm/engine/llm_engine.py", line 585, in from_engine_args
+[rank0]:     engine = cls(
+[rank0]:   File "/state/partition1/llgrid/pkg/anaconda/python-ML-2025a/lib/python3.10/site-packages/vllm/engine/llm_engine.py", line 347, in __init__
+[rank0]:     self.model_executor = executor_class(vllm_config=vllm_config, )
+[rank0]:   File "/state/partition1/llgrid/pkg/anaconda/python-ML-2025a/lib/python3.10/site-packages/vllm/executor/executor_base.py", line 36, in __init__
+[rank0]:     self._init_executor()
+[rank0]:   File "/state/partition1/llgrid/pkg/anaconda/python-ML-2025a/lib/python3.10/site-packages/vllm/executor/gpu_executor.py", line 40, in _init_executor
+[rank0]:     self.driver_worker.load_model()
+[rank0]:   File "/state/partition1/llgrid/pkg/anaconda/python-ML-2025a/lib/python3.10/site-packages/vllm/worker/worker.py", line 152, in load_model
+[rank0]:     self.model_runner.load_model()
+[rank0]:   File "/state/partition1/llgrid/pkg/anaconda/python-ML-2025a/lib/python3.10/site-packages/vllm/worker/model_runner.py", line 1074, in load_model
+[rank0]:     self.model = get_model(vllm_config=self.vllm_config)
+[rank0]:   File "/state/partition1/llgrid/pkg/anaconda/python-ML-2025a/lib/python3.10/site-packages/vllm/model_executor/model_loader/__init__.py", line 12, in get_model
+[rank0]:     return loader.load_model(vllm_config=vllm_config)
+[rank0]:   File "/state/partition1/llgrid/pkg/anaconda/python-ML-2025a/lib/python3.10/site-packages/vllm/model_executor/model_loader/loader.py", line 332, in load_model
+[rank0]:     model = _initialize_model(vllm_config=vllm_config)
+[rank0]:   File "/state/partition1/llgrid/pkg/anaconda/python-ML-2025a/lib/python3.10/site-packages/vllm/model_executor/model_loader/loader.py", line 100, in _initialize_model
+[rank0]:     return model_class(vllm_config=vllm_config, prefix=prefix)
+[rank0]:   File "/state/partition1/llgrid/pkg/anaconda/python-ML-2025a/lib/python3.10/site-packages/vllm/model_executor/models/qwen2.py", line 430, in __init__
+[rank0]:     self.model = Qwen2Model(vllm_config=vllm_config,
+[rank0]:   File "/state/partition1/llgrid/pkg/anaconda/python-ML-2025a/lib/python3.10/site-packages/vllm/compilation/decorators.py", line 126, in __init__
+[rank0]:     old_init(self, vllm_config=vllm_config, prefix=prefix, **kwargs)
+[rank0]:   File "/state/partition1/llgrid/pkg/anaconda/python-ML-2025a/lib/python3.10/site-packages/vllm/model_executor/models/qwen2.py", line 279, in __init__
+[rank0]:     self.start_layer, self.end_layer, self.layers = make_layers(
+[rank0]:   File "/state/partition1/llgrid/pkg/anaconda/python-ML-2025a/lib/python3.10/site-packages/vllm/model_executor/models/utils.py", line 509, in make_layers
+[rank0]:     [PPMissingLayer() for _ in range(start_layer)] + [
+[rank0]:   File "/state/partition1/llgrid/pkg/anaconda/python-ML-2025a/lib/python3.10/site-packages/vllm/model_executor/models/utils.py", line 510, in <listcomp>
+[rank0]:     maybe_offload_to_cpu(layer_fn(prefix=f"{prefix}.{idx}"))
+[rank0]:   File "/state/partition1/llgrid/pkg/anaconda/python-ML-2025a/lib/python3.10/site-packages/vllm/model_executor/models/qwen2.py", line 281, in <lambda>
+[rank0]:     lambda prefix: Qwen2DecoderLayer(config=config,
+[rank0]:   File "/state/partition1/llgrid/pkg/anaconda/python-ML-2025a/lib/python3.10/site-packages/vllm/model_executor/models/qwen2.py", line 201, in __init__
+[rank0]:     self.mlp = Qwen2MLP(
+[rank0]:   File "/state/partition1/llgrid/pkg/anaconda/python-ML-2025a/lib/python3.10/site-packages/vllm/model_executor/models/qwen2.py", line 69, in __init__
+[rank0]:     self.gate_up_proj = MergedColumnParallelLinear(
+[rank0]:   File "/state/partition1/llgrid/pkg/anaconda/python-ML-2025a/lib/python3.10/site-packages/vllm/model_executor/layers/linear.py", line 424, in __init__
+[rank0]:     super().__init__(input_size=input_size,
+[rank0]:   File "/state/partition1/llgrid/pkg/anaconda/python-ML-2025a/lib/python3.10/site-packages/vllm/model_executor/layers/linear.py", line 304, in __init__
+[rank0]:     self.quant_method.create_weights(
+[rank0]:   File "/state/partition1/llgrid/pkg/anaconda/python-ML-2025a/lib/python3.10/site-packages/vllm/model_executor/layers/linear.py", line 122, in create_weights
+[rank0]:     weight = Parameter(torch.empty(sum(output_partition_sizes),
+[rank0]:   File "/state/partition1/llgrid/pkg/anaconda/python-ML-2025a/lib/python3.10/site-packages/torch/utils/_device.py", line 106, in __torch_function__
+[rank0]:     return func(*args, **kwargs)
+[rank0]: torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 260.00 MiB. GPU 0 has a total capacity of 31.73 GiB of which 196.25 MiB is free. Process 1732809 has 27.44 GiB memory in use. Including non-PyTorch memory, this process has 4.10 GiB memory in use. Of the allocated memory 3.72 GiB is allocated by PyTorch, and 24.86 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+[rank0]:[W225 18:27:39.363616044 ProcessGroupNCCL.cpp:1250] Warning: WARNING: process group has NOT been destroyed before we destruct ProcessGroupNCCL. On normal program exit, the application should call destroy_process_group to ensure that any pending NCCL operations have finished in this process. In rare cases this process can exit before this point and block the progress of another member of the process group. This constraint has always been present,  but this warning has only been added since PyTorch 2.4 (function operator())
