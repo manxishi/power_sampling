@@ -154,6 +154,7 @@ if __name__ == "__main__":
 
         results.append({
             "question": question,
+            "prompt": input_text,
             "correct_answer": answer,
             "naive_completion": naive_completion,
             "naive_answer": naive_answer,
